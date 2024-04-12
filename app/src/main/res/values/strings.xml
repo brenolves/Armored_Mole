@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Armored Mole</string>
+    <string name="armored_mole">ARMORED MOLE</string>
+    <string name="placares">PLACARES</string>
+    <string name="iniciar_jogo">INICIAR JOGO</string>
+    <string name="configura_es">CONFIGURAÇÕES</string>
+    <string name="developed_by_brenolves">Developed by @brenolves</string>
+</resources>
