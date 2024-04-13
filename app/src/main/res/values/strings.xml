@@ -5,4 +5,14 @@
     <string name="iniciar_jogo">INICIAR JOGO</string>
     <string name="configura_es">CONFIGURAÇÕES</string>
     <string name="developed_by_brenolves">Developed by @brenolves</string>
+    <string name="settings">SETTINGS</string>
+    <string name="nome_padr_o">Nome Padrão</string>
+    <string name="salvar">Salvar</string>
+    <string name="tamanho_do_tabuleiro">Tamanho do Tabuleiro</string>
+    <string name="placar">PLACAR</string>
+    <string-array name="boardSizes">
+        <item>3x3</item>
+        <item>4x4</item>
+        <item>5x5</item>
+    </string-array>
 </resources>

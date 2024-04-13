@@ -25,11 +25,19 @@ public class MainMenu extends AppCompatActivity {
         });
 
         Button leaderboardsBtn = findViewById(R.id.leaderboardsBtn);
+        Button settingsBtn = findViewById(R.id.settingsBtn);
 
         leaderboardsBtn.setOnClickListener(v -> startActivity(
                 new Intent(
                         MainMenu.this,
                         Scoreboard.class)
+                )
+        );
+
+        settingsBtn.setOnClickListener(v -> startActivity(
+                new Intent(
+                        MainMenu.this,
+                        SettingsMenu.class)
                 )
         );
     }
