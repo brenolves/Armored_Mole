@@ -35,12 +35,20 @@ public class SettingsMenu extends AppCompatActivity {
 
         int duration = Toast.LENGTH_SHORT;
 
-        // Spinner
+        //// Spinners
+        // Spinner do tamanho do tabuleiro
         Spinner boardSizesSpinner=findViewById(R.id.editBoardSizeSpn);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.boardSizes, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> boardSizeAdapter=ArrayAdapter.createFromResource(this, R.array.boardSizes, android.R.layout.simple_spinner_item);
+        boardSizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
-        boardSizesSpinner.setAdapter(adapter);
+        boardSizesSpinner.setAdapter(boardSizeAdapter);
+
+        // Spinner da duração do jogo
+        Spinner gameDurationSpinner=findViewById(R.id.editGameDurationSpn);
+        ArrayAdapter<CharSequence> gameDurationAdapter=ArrayAdapter.createFromResource(this, R.array.gameDurations, android.R.layout.simple_spinner_item);
+        gameDurationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        gameDurationSpinner.setAdapter(gameDurationAdapter);
 
 
 
@@ -65,12 +73,25 @@ public class SettingsMenu extends AppCompatActivity {
         Button saveBoardSize = findViewById(R.id.saveBoardSizeBtn);
 
         saveBoardSize.setOnClickListener(v -> {
-            String spinnerValue = boardSizesSpinner.getSelectedItem().toString();
+            String boardSizeSpinnerValue = boardSizesSpinner.getSelectedItem().toString();
 
-            editor.putString("boardSize", spinnerValue);
+            editor.putString("boardSize", boardSizeSpinnerValue);
             editor.apply();
 
-            Toast toast = Toast.makeText(this, "Tamanho do Tabuleiro Salvo Como: " + spinnerValue, duration);
+            Toast toast = Toast.makeText(this, "Tamanho do Tabuleiro Salvo Como: " + boardSizeSpinnerValue, duration);
+            toast.show();
+        });
+
+        // Salvar Tamanho do Tabuleiro
+        Button saveGameDuration = findViewById(R.id.saveGameDurationBtn);
+
+        saveGameDuration.setOnClickListener(v -> {
+            String gameDurationSpinnerValue = gameDurationSpinner.getSelectedItem().toString();
+
+            editor.putString("gameDuration", gameDurationSpinnerValue);
+            editor.apply();
+
+            Toast toast = Toast.makeText(this, "Duração do Jogo Salva Como: " + gameDurationSpinnerValue, duration);
             toast.show();
         });
     }
